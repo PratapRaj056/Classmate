@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
+import android.graphics.Point;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -189,10 +190,14 @@ public class UploadImageActivity extends AppCompatActivity {
 			data.setText("");
 			for (int i = 0; i < textBlocks.size(); i++) {
 				TextBlock textBlock = textBlocks.get(textBlocks.keyAt(i));
-				
+				Point[] points = textBlock.getCornerPoints();
 				Log.i(TAG, textBlock.getValue());
-				
-				data.setText(data.getText() + "\n" + textBlock.getValue());
+				String corner = "";
+				for(Point point : points){
+					corner += point.toString();
+				}
+				//data.setText(data.getText() + "\n" + corner);
+				data.setText(data.getText()+ "\n "+ textBlock.getValue() + " \n" );
 				// Do something with value
                 /*List<? extends Text> textComponents = textBlock.getComponents();
                 for(Text currentText : textComponents) {
