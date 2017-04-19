@@ -18,7 +18,7 @@ public class TimeTable extends SugarRecord{
 	String p10;
 	
 	public TimeTable(){
-		
+		super();
 	}
 	
 	

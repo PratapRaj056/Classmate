@@ -48,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
 		
 		SugarContext.init(this);
 		
+		mTextMessage = (TextView) findViewById(R.id.message);
+		BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+		navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 		
 		TimeTable timeTable = new TimeTable(1, "A", "A", "F", "F", "D" ,"na", "na", "na", "na", "na");
 		timeTable.save();
@@ -59,10 +62,6 @@ public class MainActivity extends AppCompatActivity {
 		timeTable4.save();
 		TimeTable timeTable5 = new TimeTable(5, "E", "E", "A", "B", "C" ,"na", "na", "na", "na", "na");
 		timeTable5.save();
-		
-		mTextMessage = (TextView) findViewById(R.id.message);
-		BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-		navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 	}
 	
 }
