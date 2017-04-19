@@ -39,6 +39,7 @@
         android:layout_centerHorizontal="true" />
 
     <EditText
+        android:id="@+id/lectureName"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@+id/periodLabel"
@@ -46,6 +47,7 @@
         android:hint="Lecture Name" />
 
     <Button
+        android:id="@+id/onClickAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
