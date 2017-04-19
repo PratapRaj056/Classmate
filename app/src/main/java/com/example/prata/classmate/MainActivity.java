@@ -1,7 +1,6 @@
 package com.example.prata.classmate;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -14,11 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.example.prata.classmate.fragment.ScheduleFragment;
-import com.example.prata.classmate.litho.ListItem;
 import com.example.prata.classmate.sugarrecord.TimeTable;
-import com.facebook.litho.ComponentContext;
-import com.facebook.litho.ComponentInfo;
-import com.facebook.litho.widget.RecyclerBinder;
 import com.orm.SugarContext;
 
 public class MainActivity extends AppCompatActivity {
@@ -35,23 +30,23 @@ public class MainActivity extends AppCompatActivity {
 			switch (item.getItemId()) {
 				case R.id.navigation_day1:
 					//mTextMessage.setText(R.string.title_day1);
-					fragment = ScheduleFragment.newInstance("1", "");
+					fragment = ScheduleFragment.newInstance(6, "");
 					break;
 				case R.id.navigation_day2:
 					//mTextMessage.setText(R.string.title_day2);
-					fragment = ScheduleFragment.newInstance("2", "");
+					fragment = ScheduleFragment.newInstance(7, "");
 					break;
 				case R.id.navigation_day3:
 					//mTextMessage.setText(R.string.title_day3);
-					fragment = ScheduleFragment.newInstance("3", "");
+					fragment = ScheduleFragment.newInstance(8, "");
 					break;
 				case R.id.navigation_day4:
 					//mTextMessage.setText(R.string.title_day4);
-					fragment = ScheduleFragment.newInstance("4", "");
+					fragment = ScheduleFragment.newInstance(9, "");
 					break;
 				case R.id.navigation_day5:
 					//mTextMessage.setText(R.string.title_day5);
-					fragment = ScheduleFragment.newInstance("5", "");
+					fragment = ScheduleFragment.newInstance(10, "");
 					break;
 			}
 			final FragmentTransaction transaction = fragmentManager.beginTransaction();
@@ -87,13 +82,6 @@ public class MainActivity extends AppCompatActivity {
 		//mTextMessage = (TextView) findViewById(R.id.message);
 		BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
 		
-		fragmentManager = getSupportFragmentManager();
-		fragment = ScheduleFragment.newInstance("1", "");
-		final FragmentTransaction transaction = fragmentManager.beginTransaction();
-		transaction.replace(R.id.content, fragment).commit();
-		
-		navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-		
 		TimeTable timeTable = new TimeTable(1, "A", "A", "F", "F", "D" ,"na", "na", "na", "na", "na");
 		timeTable.save();
 		TimeTable timeTable2 = new TimeTable(2, "na", "na", "na", "na", "na" ,"B", "B", "G", "G", "A");
@@ -104,9 +92,29 @@ public class MainActivity extends AppCompatActivity {
 		timeTable4.save();
 		TimeTable timeTable5 = new TimeTable(5, "E", "E", "A", "B", "C" ,"na", "na", "na", "na", "na");
 		timeTable5.save();
+		
+		TimeTable timeTable6 = new TimeTable(6, "na", "SE1017", "SE1023", "SE1023", "na" ,"na", "DE-III", "SE1017/SE1018 Lab", "SE1017/SE1018 Lab", "na");
+		timeTable6.save();
+		TimeTable timeTable7 = new TimeTable(7, "na", "na", "na", "na", "SE1049" ,"SE1049", "SE1018", "OE-II", "OE-II", "SE1017");
+		timeTable7.save();
+		TimeTable timeTable8 = new TimeTable(8, "na", "SE1019", "SE1020", "SE1023", "na" ,"na", "DE-III", "na", "na", "na");
+		timeTable8.save();
+		TimeTable timeTable9 = new TimeTable(9, "na", "na", "SE1017/SE1018 Lab", "SE1017/SE1018 Lab", "na" ,"PD", "PD", "SE1018", "SE1019", "OE-II");
+		timeTable9.save();
+		TimeTable timeTable10 = new TimeTable(10, "SE1020", "SE1020", "SE1017", "SE1018", "SE1019" ,"DE-III", "na", "na", "na", "na");
+		timeTable10.save();
+		
+		fragmentManager = getSupportFragmentManager();
+		fragment = ScheduleFragment.newInstance(6, "");
+		final FragmentTransaction transaction = fragmentManager.beginTransaction();
+		transaction.replace(R.id.content, fragment).commit();
+		
+		navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+		
+		
 	}
 	
-	private void addContent(
+	/*private void addContent(
 			RecyclerBinder recyclerBinder,
 			ComponentContext context) {
 		for (int i = 0; i < 32; i++) {
@@ -114,12 +122,11 @@ public class MainActivity extends AppCompatActivity {
 			componentInfoBuilder.component(
 					ListItem.create(context)
 							.color(i % 2 == 0 ? Color.WHITE : Color.LTGRAY)
-							.title("Hello, world!")
-							.subtitle("Litho tutorial")
+							.dayOrder(mp)
 							.build());
 			recyclerBinder.insertItemAt(i, componentInfoBuilder.build());
 		}
-	}
+	}*/
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
