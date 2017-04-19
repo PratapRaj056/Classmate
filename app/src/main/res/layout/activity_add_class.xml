@@ -55,6 +55,7 @@
         android:layout_alignParentBottom="true"
         android:background="@android:color/transparent"
         android:text="Add Lecture"
+        android:onClick="onClickLecture"
         android:textColor="@color/colorAccent" />
 
 </RelativeLayout>

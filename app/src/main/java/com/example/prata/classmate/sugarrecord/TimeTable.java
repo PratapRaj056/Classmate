@@ -75,4 +75,44 @@ public class TimeTable extends SugarRecord{
 	public String getP10() {
 		return p10;
 	}
+	
+	public void setP1(String p1) {
+		this.p1 = p1;
+	}
+	
+	public void setP2(String p2) {
+		this.p2 = p2;
+	}
+	
+	public void setP3(String p3) {
+		this.p3 = p3;
+	}
+	
+	public void setP4(String p4) {
+		this.p4 = p4;
+	}
+	
+	public void setP5(String p5) {
+		this.p5 = p5;
+	}
+	
+	public void setP6(String p6) {
+		this.p6 = p6;
+	}
+	
+	public void setP7(String p7) {
+		this.p7 = p7;
+	}
+	
+	public void setP8(String p8) {
+		this.p8 = p8;
+	}
+	
+	public void setP9(String p9) {
+		this.p9 = p9;
+	}
+	
+	public void setP10(String p10) {
+		this.p10 = p10;
+	}
 }
