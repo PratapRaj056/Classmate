@@ -1,4 +1,4 @@
-package com.example.prata.classmate.sugarrecord;
+package com.example.prata.classmate;
 
 import android.app.Activity;
 import android.content.pm.PackageManager;

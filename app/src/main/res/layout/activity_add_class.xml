@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context="com.example.prata.classmate.sugarrecord.AddClassActivity">
+    tools:context="com.example.prata.classmate.AddClassActivity">
 
     <TextView
         android:id="@+id/dayLabel"
@@ -19,7 +19,8 @@
         android:id="@+id/dayOrderSpinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:spinnerMode="dialog"/>
 
     <TextView
         android:id="@+id/periodLabel"
@@ -29,14 +30,15 @@
         android:layout_marginTop="20dp"
         android:text="Timing:"
         android:textAppearance="?android:textAppearanceMedium"
-        android:textStyle="bold" />
+        android:textStyle="bold"/>
 
     <Spinner
         android:id="@+id/periodSpinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/periodLabel"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:spinnerMode="dialog" />
 
     <EditText
         android:id="@+id/lectureName"
