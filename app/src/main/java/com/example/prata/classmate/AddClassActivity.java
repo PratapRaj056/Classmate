@@ -3,6 +3,7 @@ package com.example.prata.classmate;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -87,7 +88,7 @@ public class AddClassActivity extends AppCompatActivity {
     
     public void onClickLecture(View v){
 	    String et = "";
-	    if(subjectcode.getText()!=null && subjectcode.getText().equals("")){
+	    if(subjectcode.getText()!=null && TextUtils.isEmpty(subjectcode.getText())){
 		    et = "na";
 	    }else{
 		    et = subjectcode.getText().toString();
