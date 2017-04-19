@@ -52,7 +52,7 @@ public class AddClassActivity extends AppCompatActivity {
 	    periodSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 		    @Override
 		    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-			    TimeTable timeTable = SugarRecord.findById(TimeTable.class, (dayOrderSpinner.getSelectedItemPosition()+6));
+			    TimeTable timeTable = SugarRecord.findById(TimeTable.class,(long)(dayOrderSpinner.getSelectedItemPosition()+6));
 			    String et="";
 			    switch (position){
 				    case 0: et = timeTable.getP1();
@@ -93,7 +93,7 @@ public class AddClassActivity extends AppCompatActivity {
 	    }else{
 		    et = subjectcode.getText().toString();
 	    }
-	    TimeTable timeTable = SugarRecord.findById(TimeTable.class, (dayOrderSpinner.getSelectedItemPosition()+6));
+	    TimeTable timeTable = SugarRecord.findById(TimeTable.class,(long)(dayOrderSpinner.getSelectedItemPosition()+6));
 	    switch (periodSpinner.getSelectedItemPosition()){
 		    case 0: timeTable.setP1(et);
 			    break;

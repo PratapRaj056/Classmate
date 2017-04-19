@@ -96,7 +96,7 @@ public class ScheduleFragment extends Fragment {
 	private void addContent(
 			RecyclerBinder recyclerBinder,
 			ComponentContext context) {
-		TimeTable timeTable = SugarRecord.findById(TimeTable.class, mParam1);
+		TimeTable timeTable = SugarRecord.findById(TimeTable.class,(long)mParam1);
 		String subjectCode="", timeRange="";
 		int z = 0;
 		for (int i = 0; i < 10; i++) {
