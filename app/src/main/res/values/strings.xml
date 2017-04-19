@@ -5,4 +5,8 @@
     <string name="title_day3">Day 3</string>
     <string name="title_day4">Day 4</string>
     <string name="title_day5">Day 5</string>
+    <string name="dialog_select_prompt">Upload your info table..</string>
+    <string name="dialog_select_gallery">Gallery</string>
+    <string name="dialog_select_camera">Camera</string>
+
 </resources>
