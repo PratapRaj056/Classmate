@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_day1"
+        android:icon="@drawable/ic_calendar"
+        android:title="@string/title_day1"/>
+
+    <item
+        android:id="@+id/navigation_day2"
+        android:icon="@drawable/ic_calendar"
+        android:title="@string/title_day2"/>
+
+    <item
+        android:id="@+id/navigation_day3"
+        android:icon="@drawable/ic_calendar"
+        android:title="@string/title_day3"/>
+
+    <item
+        android:id="@+id/navigation_day4"
+        android:icon="@drawable/ic_calendar"
+        android:title="@string/title_day4"/>
+
+    <item
+        android:id="@+id/navigation_day5"
+        android:icon="@drawable/ic_calendar"
+        android:title="@string/title_day5"/>
+
+</menu>

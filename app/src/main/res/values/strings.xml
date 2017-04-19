@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Classmate</string>
+    <string name="title_day1">Day 1</string>
+    <string name="title_day2">Day 2</string>
+    <string name="title_day3">Day 3</string>
+    <string name="title_day4">Day 4</string>
+    <string name="title_day5">Day 5</string>
+</resources>
