@@ -8,5 +8,24 @@
     <string name="dialog_select_prompt">Upload your info table..</string>
     <string name="dialog_select_gallery">Gallery</string>
     <string name="dialog_select_camera">Camera</string>
+    <string-array name="dayOrder">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="Timing">
+        <item>8:00–8:50</item>
+        <item>8:50–9:40</item>
+        <item>9:45–10:35</item>
+        <item>10:40–11:30</item>
+        <item>11:35–12:25</item>
+        <item>12:25–01:25</item>
+        <item>01:25–02:15</item>
+        <item>02:20–03:10</item>
+        <item>03:15–04:05</item>
+        <item>04:05–04:55</item>
+    </string-array>
 
 </resources>

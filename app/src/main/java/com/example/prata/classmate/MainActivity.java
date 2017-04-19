@@ -10,6 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.example.prata.classmate.sugarrecord.AddClassActivity;
 import com.example.prata.classmate.sugarrecord.TimeTable;
 import com.orm.SugarContext;
 
@@ -82,8 +83,11 @@ public class MainActivity extends AppCompatActivity {
 			case R.id.action_scan:
 				startActivity(new Intent(this, UploadImageActivity.class));
 				return true;
-			default:
-				return super.onOptionsItemSelected(item);
+            case R.id.action_add:
+                startActivity(new Intent(this, AddClassActivity.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
 		}
 	}
 }
