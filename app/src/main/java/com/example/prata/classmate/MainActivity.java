@@ -21,12 +21,15 @@ import android.view.MenuItem;
 import com.example.prata.classmate.fragment.ScheduleFragment;
 import com.example.prata.classmate.sugarrecord.TimeTable;
 import com.orm.SugarContext;
+import com.orm.SugarRecord;
 
 public class MainActivity extends AppCompatActivity {
 	
 	//private TextView mTextMessage;
 	private Fragment fragment;
 	private FragmentManager fragmentManager;
+	
+	TimeTable t;
 	
 	private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
 			= new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -83,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 		addContent(recyclerBinder, context);
 		
 		setContentView(LithoView.create(context, component));*/
-		sendNotification2("Subject Code",  "Automated Notification!");
+		
 		
 		//mTextMessage = (TextView) findViewById(R.id.message);
 		BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -117,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
 		
 		navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 		
+		t = SugarRecord.findById(TimeTable.class, 6);
 		
 	}
 	
@@ -153,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, AddClassActivity.class));
                 return true;
 			case R.id.action_notification:
-				sendNotification("Subject Code","This is a test notification!");
+				sendNotification2(t.getP2(), "8:00-8:50");
 				return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -188,8 +192,8 @@ public class MainActivity extends AppCompatActivity {
 				sendNotification(title, messageBody);
 				i++;
 				try {
-					Thread.sleep(10000);
-					sendNotification2(title, messageBody + i);
+					Thread.sleep(60000);
+					sendNotification2(title, messageBody);
 				}
 				catch (InterruptedException e) {
 					e.printStackTrace();
