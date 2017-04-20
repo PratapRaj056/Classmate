@@ -12,4 +12,9 @@
         android:title="Add Class"
         app:showAsAction="always" />
 
+    <item
+        android:id="@+id/action_notification"
+        android:icon="@android:drawable/ic_notification_overlay"
+        android:title="Add Notification"
+        app:showAsAction="always" />
 </menu>

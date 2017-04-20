@@ -1,12 +1,18 @@
 package com.example.prata.classmate;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -77,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 		addContent(recyclerBinder, context);
 		
 		setContentView(LithoView.create(context, component));*/
-		
+		sendNotification2("Subject Code",  "Automated Notification!");
 		
 		//mTextMessage = (TextView) findViewById(R.id.message);
 		BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -146,8 +152,49 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_add:
                 startActivity(new Intent(this, AddClassActivity.class));
                 return true;
+			case R.id.action_notification:
+				sendNotification("Subject Code","This is a test notification!");
+				return true;
             default:
                 return super.onOptionsItemSelected(item);
 		}
+	}
+	
+	private void sendNotification(String title, String messageBody) {
+		Intent intent = new Intent(this, MainActivity.class);
+		intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent,
+				PendingIntent.FLAG_ONE_SHOT);
+		
+		Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+		NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
+				.setSmallIcon(R.mipmap.ic_launcher)
+				.setContentTitle(title)
+				.setContentText(messageBody)
+				.setAutoCancel(true)
+				.setSound(defaultSoundUri)
+				.setContentIntent(pendingIntent);
+		
+		NotificationManager notificationManager =
+				(NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+		
+		notificationManager.notify(0, notificationBuilder.build());
+	}
+	static int i = 0;
+	private void sendNotification2(final String title, final String messageBody) {
+		runOnUiThread(new Thread(new Runnable() {
+			@Override
+			public void run() {
+				sendNotification(title, messageBody);
+				i++;
+				try {
+					Thread.sleep(10000);
+					sendNotification2(title, messageBody + i);
+				}
+				catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		}));
 	}
 }
