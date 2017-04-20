@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, AddClassActivity.class));
                 return true;
 			case R.id.action_notification:
-				sendNotification2(t.getP2(), "8:00-8:50");
+				sendNotification2();
 				return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -184,16 +184,52 @@ public class MainActivity extends AppCompatActivity {
 		
 		notificationManager.notify(0, notificationBuilder.build());
 	}
-	static int i = 0;
-	private void sendNotification2(final String title, final String messageBody) {
+	static int position = 0;
+	private void sendNotification2() {
 		runOnUiThread(new Thread(new Runnable() {
 			@Override
 			public void run() {
-				sendNotification(title, messageBody);
-				i++;
+				position = position%10;
+				String et = "";
+				String msg = "";
+				switch (position){
+					case 0: et = t.getP1();
+						msg = "08:00–08:50";
+						break;
+					case 1: et = t.getP2();
+						msg = "08:50-09:40";
+						break;
+					case 2: et = t.getP3();
+						msg = "09:45-10:35";
+						break;
+					case 3: et = t.getP4();
+						msg = "10:40-11:30";
+						break;
+					case 4: et = t.getP5();
+						msg = "11:35-12:25";
+						break;
+					case 5: et = t.getP6();
+						msg = "12:25-01:25";
+						break;
+					case 6: et = t.getP7();
+						msg = "01:25-02:15";
+						break;
+					case 7: et = t.getP8();
+						msg = "02:20-03:10";
+						break;
+					case 8: et = t.getP9();
+						msg = "03:15-04:05";
+						break;
+					case 9: et = t.getP10();
+						msg = "04:05-04:55";
+						break;
+				}
+				position++;
+				sendNotification(et, msg);
+				
 				try {
 					Thread.sleep(60000);
-					sendNotification2(title, messageBody);
+					sendNotification2();
 				}
 				catch (InterruptedException e) {
 					e.printStackTrace();
