@@ -225,7 +225,8 @@ public class MainActivity extends AppCompatActivity {
 						break;
 				}
 				position++;
-				sendNotification(et, msg);
+				//if(!et.equals("na"))
+					sendNotification(et, msg);
 				
 				try {
 					Thread.sleep(60000);
